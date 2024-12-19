@@ -1,0 +1,43 @@
+{% extends 'mailing/base.html' %}
+
+{% block title %}Информация о выполненных рассылках{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h2>Попытки рассылки</h2>
+</div>
+
+<div class="table-responsive small">
+    <table class="table table-striped table-hover table-sm">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Дата и время</th>
+            <th scope="col">Статус</th>
+            <th scope="col">Ответ сервера</th>
+            <th scope="col">Рассылка</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for attempt in object_list %}
+        <tr>
+            <td>{{ attempt.id }}</td>
+            <td>{{ attempt.attempted_at }}</td>
+            <td>
+                <span class="badge
+                {% if attempt.status == 'успех' %}badge-success
+                {% elif attempt.status == 'ошибка' %}badge-danger
+                {% else %}badge-secondary{% endif %}">
+                    {{ attempt.status }}
+                </span>
+            </td>
+            <td>{{ attempt.mail_server_response }}</td>
+            <td>{{ attempt.mailing }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

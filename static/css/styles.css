@@ -1,0 +1,192 @@
+/* Стиль для изображения-заполнителя */
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+/* Стиль для разделителей */
+.b-example-divider {
+  width: 100%;
+  height: 3rem;
+  background-color: rgba(255, 165, 0, .1); /* Оранжевый с прозрачностью для фона */
+  border: solid rgba(255, 165, 0, .15);  /* Оранжевая рамка с прозрачностью */
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(255, 165, 0, .15); /* Оранжевый оттенок для теней */
+}
+
+/* Стиль для вертикальных разделителей */
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+/* Стиль для иконок */
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+/* Стиль для скроллера навигации */
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+/* Стиль для навигации */
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Основной стиль для кнопок */
+.btn-bd-primary {
+  --bd-violet-bg: #ff6600; /* Оранжевый фон для кнопок */
+  --bd-violet-rgb: 255.102, 0, 0; /* RGB для оранжевого цвета */
+
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #e65c00; /* Темно-оранжевый для кнопки при наведении */
+  --bs-btn-hover-border-color: #e65c00;
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #cc5200; /* Темный оранжевый для кнопки в активном состоянии */
+  --bs-btn-active-border-color: #cc5200;
+}
+
+/* Стиль для переключателя режима */
+.bd-mode-toggle {
+  z-index: 1500;
+}
+
+/* Активный элемент в меню переключателя режима */
+.bd-mode-toggle .dropdown-menu .active .bi {
+  display: block !important;
+}
+
+/* Кастомные стили для таблицы */
+.table thead {
+    background-color: #007bff; /* Синий фон для заголовков */
+    color: white; /* Белый текст */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Светлый фон для четных строк */
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1; /* Цвет фона для строки при наведении */
+}
+
+/* Стиль для кнопок */
+.btn-outline-success {
+    color: #28a745; /* Зеленый цвет */
+    border-color: #28a745;
+}
+
+.btn-outline-success:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-outline-warning {
+    color: #ffc107; /* Желтый цвет */
+    border-color: #ffc107;
+}
+
+.btn-outline-warning:hover {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-outline-danger {
+    color: #dc3545; /* Красный цвет */
+    border-color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Общие стили для страницы */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Кастомные стили для кнопки */
+.custom-btn {
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    width: 150px; /* фиксированная ширина для кнопки */
+}
+
+.custom-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Кастомизация карточки формы */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 40px;
+}
+
+/* Типографика заголовка */
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Формы */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
+
+/* Отступы для формы */
+.mb-3 {
+    margin-bottom: 15px;
+}

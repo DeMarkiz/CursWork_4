@@ -1,0 +1,37 @@
+{% extends 'mailing/base.html' %}
+
+{% block title %}Получатели рассылки{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">
+        {% if object %}
+            Изменить получателя рассылки
+        {% else %}
+            Добавить получателя рассылки
+        {% endif %}
+    </h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- Выводим каждое поле формы в отдельном параграфе -->
+                <div class="form-group mb-3">
+                    {{ form.as_p }}
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    {% if object %}
+                        <button type="submit" class="btn btn-primary custom-btn">Изменить</button>
+                    {% else %}
+                        <button type="submit" class="btn btn-primary custom-btn">Добавить</button>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+
+/* Основной стиль страницы */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.bi {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (min-width: 768px) {
+  .sidebar .offcanvas-lg {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 48px;
+  }
+  .navbar-search {
+    display: block;
+  }
+}
+
+/* Стили для боковой панели */
+.sidebar {
+  background-color: var(--sidebar-bg-color); /* Темный фон для боковой панели */
+}
+
+.sidebar .nav-link {
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--text-color); /* Оранжевый цвет для ссылок */
+}
+
+.sidebar .nav-link.active {
+  color: var(--active-link-color); /* Активные ссылки оранжевые */
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  color: var(--text-color); /* Оранжевый цвет для заголовков */
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--navbar-bg-color); /* Темный фон для navbar */
+}
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  background-color: var(--navbar-brand-bg-color); /* Тот же темный фон для navbar brand */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  color: var(--text-color); /* Оранжевый текст для navbar brand */
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  background-color: var(--input-bg-color); /* Темный фон для input-полей */
+  color: var(--text-color); /* Оранжевый текст для input */
+  border: 1px solid var(--input-border-color); /* Оранжевая рамка для input */
+}
+
+/* Стили для активных элементов */
+.navbar .nav-link.active {
+  color: var(--active-link-color); /* Активные ссылки становятся оранжевыми */
+}
+
+.navbar-toggler-icon {
+  background-color: var(--text-color); /* Оранжевая иконка для меню */
+}

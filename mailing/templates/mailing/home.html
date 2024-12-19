@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Черный фон для страницы */
+            color: #FFA500; /* Оранжевый цвет текста */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #222222; /* Темный фон для заголовка */
+            color: #FFA500; /* Оранжевый текст */
+            padding: 15px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .stats {
+            margin: 20px;
+            padding: 20px;
+            background-color: #333333; /* Темный фон для блока статистики */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .stats p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #FFA500; /* Оранжевый фон для кнопки */
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #cc8400; /* Более темный оранжевый при наведении */
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .nav a {
+            background-color: #000000; /* Черный фон для ссылок */
+            color: #FFA500; /* Оранжевый цвет текста */
+            padding: 10px 15px;
+            text-decoration: none;
+            margin: 0 10px;
+            border-radius: 5px;
+        }
+        .nav a:hover {
+            background-color: #222222; /* Темный фон для ссылок при наведении */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Статистика рассылок</h1>
+    </header>
+
+    <div class="stats">
+        <p>Общее количество рассылок: {{ total_mailings }}</p>
+        <p>Количество активных рассылок: {{ active_mailings }}</p>
+        <p>Количество уникальных получателей: {{ unique_recipients }}</p>
+    </div>
+
+    <div class="nav">
+        <a href="{% url 'recipient_list' %}">Получатели</a>
+        <a href="{% url 'message-list' %}">Сообщения</a>
+        <a href="{% url 'mailing_list' %}">Рассылки</a>
+    </div>
+
+    <a href="{% url 'mailing_create' %}" class="btn">Создать рассылку</a>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% extends 'users/base_generic.html' %}
+
+{% load static %}
+
+{% block content %}
+  <h2>Ваша учетная запись активирована!</h2>
+  <p>Теперь вы можете войти в свою учетную запись.</p>
+  <a href="{% url 'users:login' %}">Войти</a>
+{% endblock %}

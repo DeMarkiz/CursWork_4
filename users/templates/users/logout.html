@@ -1,0 +1,8 @@
+{% extends 'users/base_generic.html' %}
+
+{% load static %}
+
+{% block content %}
+  <h2>Вы вышли из системы</h2>
+  <p><a href="{% url 'users:login' %}">Войти снова</a></p>
+{% endblock %}
