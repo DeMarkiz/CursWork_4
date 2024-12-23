@@ -2,7 +2,7 @@
 name = "mailing-service"
 version = "0.1.0"
 description = ""
-authors = ["Michail Fedyaev <drovosekov1910@mail.ru>"]
+authors = ["DeMarkiz markberezhnoy27@gmail.com"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
