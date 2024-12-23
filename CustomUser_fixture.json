@@ -1,0 +1,60 @@
+[
+{
+    "model": "users.customuser",
+    "pk": 1,
+    "fields": {
+        "last_login": "2024-12-23T09:51:43Z",
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-17T12:52:41Z",
+        "email": "markberezhnoy27@gmail.com",
+        "password": "pbkdf2_sha256$870000$PhTuZDEFVkfBRQTKibRdgt$ENJFI6oQbUzufG2Dbkdgt6mrRKv9Sf/od4z7xmlKfVo=",
+        "token": "f2d40dcd500e868f52f28164fe8cacf1",
+        "groups": [
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 2,
+    "fields": {
+        "last_login": "2024-12-23T10:12:54.624Z",
+        "is_superuser": true,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-12-23T09:58:06.525Z",
+        "email": "admin@admin.ru",
+        "password": "pbkdf2_sha256$870000$zPwm799CMsTFth1aYn7ter$YYzbkpbWlThxOQKh8tcxv22td7QvJYGEbMICobV9S+s=",
+        "token": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 5,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2024-12-23T10:12:41Z",
+        "email": "drovosekov1910@mail.ru",
+        "password": "pbkdf2_sha256$870000$Y3dIJhumuv4JJ1IwFIPCjF$UoKQcXsveMH3r3BzUYZsc1PsPS+Fpi71wVshkPZVqB0=",
+        "token": "4e373d48e9ed1bd586f59d5046cc863d",
+        "groups": [
+            1
+        ],
+        "user_permissions": []
+    }
+}
+]

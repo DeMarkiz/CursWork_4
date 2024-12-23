@@ -57,4 +57,4 @@ def email_verification(request, token):
     user = get_object_or_404(CustomUser, token=token)
     user.is_active = True
     user.save()
-    return redirect(reverse("user:login"))
+    return redirect(reverse("users:login"))

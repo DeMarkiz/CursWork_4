@@ -25,6 +25,18 @@ class IndexView(LoginRequiredMixin, TemplateView):
 class RecipientListView(LoginRequiredMixin, ListView):
     model = Recipient
 
+    def get_queryset(self):
+        user = self.request.user
+        if user.groups.filter(name="Менеджер").exists():
+            return Recipient.objects.all()
+        return Recipient.objects.filter(owner=user.id)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        is_manager = self.request.user.groups.filter(name="Менеджер").exists()
+        context["is_manager"] = is_manager
+        return context
+
 
 class RecipientCreateView(LoginRequiredMixin, CreateView):
     model = Recipient
@@ -65,6 +77,17 @@ class RecipientDeleteView(LoginRequiredMixin, DeleteView):
 class MessageListView(LoginRequiredMixin, ListView):
     model = Message
 
+    def get_queryset(self):
+        user = self.request.user
+        if user.groups.filter(name="Менеджер").exists():
+            return Message.objects.all()
+        return Message.objects.filter(owner=user.id)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        is_manager = self.request.user.groups.filter(name="Менеджер").exists()
+        context["is_manager"] = is_manager
+        return context
 
 class MessageCreateView(LoginRequiredMixin, CreateView):
     model = Message
@@ -105,6 +128,17 @@ class MessageDeleteView(LoginRequiredMixin, DeleteView):
 class MailingListView(LoginRequiredMixin, ListView):
     model = Mailing
 
+    def get_queryset(self):
+        user = self.request.user
+        if user.groups.filter(name="Менеджер").exists():
+            return Mailing.objects.prefetch_related("recipients")
+        return Mailing.objects.filter(owner=user.id).prefetch_related("recipients")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        is_manager = self.request.user.groups.filter(name="Менеджер").exists()
+        context["is_manager"] = is_manager
+        return context
 
 class MailingCreateView(LoginRequiredMixin, CreateView):
     model = Mailing
@@ -188,6 +222,11 @@ class MailingDetailView(LoginRequiredMixin, DetailView):
 class MailingAttemptListView(LoginRequiredMixin, ListView):
     model = MailingAttempt
 
+    def get_queryset(self):
+        user = self.request.user
+        if user.groups.filter(name="Менеджер").exists():
+            return MailingAttempt.objects.all()
+        return MailingAttempt.objects.filter(mailing__owner=user.id)
 
 class MailingStopView(LoginRequiredMixin, View):
     def post(self, request, pk):
